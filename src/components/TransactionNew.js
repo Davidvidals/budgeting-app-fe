@@ -59,7 +59,7 @@ const handleSubmit = (event) => {
         />
         <br/>
         <label>Category:</label>
-        <textarea
+        <input
           id="category"
           name=""
           value={Transactions.category}
