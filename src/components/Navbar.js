@@ -4,6 +4,9 @@ function NavBar() {
   return (
     <nav>
       <h1>
+        <Link to='/'>Home</Link>
+      </h1>
+      <h1>
         <Link to="/Transactions">Transactions</Link>
       </h1>
       <button>
