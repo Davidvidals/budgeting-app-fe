@@ -15,6 +15,8 @@ function TransactionEdit(){
         setTransactions({...Transactions, [event.target.id]: event.target.value})
     }
 
+    useEffect(()=>{},[]);
+    
     const handleSubmit = (event)=>{
         event.preventDefault();
     }
@@ -70,7 +72,7 @@ function TransactionEdit(){
         <br />
         <input type="submit" />
       </form>
-      <Link to={'/'}>
+      <Link to={`/Transactions/${index}`}>
         <button>Nevermind!</button>
       </Link>
         </div>

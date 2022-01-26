@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Transactions from "./Transactions";
+
 
 function TransactionNew(){
 const [Transactions,setTransactions ] = useState({

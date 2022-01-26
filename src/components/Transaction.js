@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom"
+import Transactions from "./Transactions"
 
-function Transaction ({Transaction , index}){
+function Budget({Transaction , index}){
     return (
         <div>
            {Transaction.item_name}
@@ -9,3 +10,5 @@ function Transaction ({Transaction , index}){
         </div>
     )
 }
+
+export default Transaction;

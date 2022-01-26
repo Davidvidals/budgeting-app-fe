@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import Transaction from '../components/Transaction.js'
+import Budget from './Transaction'
 // import axios from "axios";
 
-const API_URL = process.env.REACT_APP_API_URL
+const API_URL = process.env.REACT_APP_API_URL;
 
 function Transactions(){
-    const[Transactions,setTransactions]=useState([]);
+    const[transactions,setTransactions]=useState([]);
     useEffect(()=>{
         
         fetch(API_URL + "/Transactions")
@@ -19,8 +19,8 @@ function Transactions(){
     }, []);
      return(
             <div className="Transactions">
-                 {Transactions.map((Transaction, index) => {
-              return <Transaction  transaction={Transaction} index={index} />;
+                 {transactions.map((Transaction, index) => {
+              return <Budget Transaction={Transaction} index={index} />;
             })}
             </div>
         )
