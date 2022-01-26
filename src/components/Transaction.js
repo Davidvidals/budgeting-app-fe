@@ -11,4 +11,4 @@ function Budget({Transaction , index}){
     )
 }
 
-export default Transaction;
+export default Budget;
