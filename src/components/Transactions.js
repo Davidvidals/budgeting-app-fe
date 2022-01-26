@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Transaction from '../components/Transaction.js'
 // import axios from "axios";
 
 const API_URL = process.env.REACT_APP_API_URL
@@ -18,8 +19,8 @@ function Transactions(){
     }, []);
      return(
             <div className="Transactions">
-                 {Transactions.map((transaction, amount) => {
-              return <Transactions  transaction={transaction} amount={amount} />;
+                 {Transactions.map((Transaction, index) => {
+              return <Transaction  transaction={Transaction} index={index} />;
             })}
             </div>
         )
