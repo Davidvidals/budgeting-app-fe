@@ -2,7 +2,7 @@ import { useState } from "react";
 
 
 function TransactionNew(){
-const [Transactions,setTransactions ] = useState({
+const [Transaction,setTransactions ] = useState({
     item_name : "",
         amount: 0,
         date: "",
@@ -10,7 +10,7 @@ const [Transactions,setTransactions ] = useState({
         category: ""
 });
 const handleTextChange= (event=>{
-    setTransactions({...Transactions, [event.target.id]: event.target.value})
+    setTransactions({...Transaction, [event.target.id]: event.target.value})
 })
 
 const handleSubmit = (event) => {
@@ -23,7 +23,7 @@ const handleSubmit = (event) => {
         <label> Item Name:</label>
         <input
           id="item-name"
-          value={Transactions.item_name}
+          value={Transaction.item_name}
           type="text"
           onChange={handleTextChange}
           placeholder=" "
@@ -34,7 +34,7 @@ const handleSubmit = (event) => {
         <input
           id="amount"
           type="text"
-          value={Transactions.amount}
+          value={Transaction.amount}
           placeholder="amount"
           onChange={handleTextChange}
         />
@@ -43,7 +43,7 @@ const handleSubmit = (event) => {
         <input
           id="date"
           type="text"
-          value={Transactions.date}
+          value={Transaction.date}
           placeholder="Date"
           onChange={handleTextChange}
         />
@@ -53,7 +53,7 @@ const handleSubmit = (event) => {
           id="from"
           type="text"
           name="from"
-          value={Transactions.from}
+          value={Transaction.from}
           placeholder="From"
           onChange={handleTextChange}
         />
@@ -62,7 +62,7 @@ const handleSubmit = (event) => {
         <input
           id="category"
           name=""
-          value={Transactions.category}
+          value={Transaction.category}
           onChange={handleTextChange}
           placeholder="category"
         />

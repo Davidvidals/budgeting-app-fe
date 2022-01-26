@@ -1,12 +1,12 @@
 import {Link} from "react-router-dom"
-import Transactions from "./Transactions"
 
-function Budget({Transaction , index}){
+
+function Budget({Transactions , index}){
     return (
         <div>
-           {Transaction.item_name}
+          
 
-           <Link to ={`/Transactions/${index}`}>=</Link>
+           <Link to ={`/Transactions/${index}`}> ---GO</Link>
         </div>
     )
 }

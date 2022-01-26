@@ -19,18 +19,18 @@ function TransactionEdit(){
     
     const handleSubmit = (event)=>{
         event.preventDefault();
+        console.log(Transactions)
     }
     return(
         <div>
             <form onSubmit={handleSubmit}>
         <label> Item Name:</label>
         <input
-          id="item-name"
-          value={Transactions.item_name}
+          id="name"
           type="text"
+          value={Transactions.item_name}
+          placeholder="name"
           onChange={handleTextChange}
-          placeholder=" "
-          
         />
         <br/>
         <label>Amount:</label>
