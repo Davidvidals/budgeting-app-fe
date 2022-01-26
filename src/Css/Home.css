@@ -1,0 +1,36 @@
+.title{
+    font-weight: bold;
+    color: rgb(66, 66, 233);
+
+    
+}
+
+.description{
+    font-style: italic;
+    text-align: center;
+}
+
+#stock1{
+    grid-area: topleft;
+}
+#stock2{
+    grid-area: topright;
+}
+#stock3{
+    grid-area: lowleft;
+}
+#stock4{
+    grid-area: lowright;
+}
+
+#home-page {
+    display: grid;
+    column-gap:110px;
+  row-gap: 20px;
+    grid-template-columns: 200px 320px 150px 150px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "topleft topleft topright topright"
+      "topleft topleft topright topright"
+      "lowleft lowleft lowright lowright";
+  }
