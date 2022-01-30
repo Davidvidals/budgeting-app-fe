@@ -3,7 +3,12 @@ import TransactionEdit from "../components/TransactionEdit"
 function Edit() {
     return (
       <div className="New Edit">
-        <h2>Edit</h2>
+                <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         <TransactionEdit />
       </div>
     );

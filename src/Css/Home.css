@@ -1,36 +1,73 @@
-.title{
-    font-weight: bold;
-    color: rgb(66, 66, 233);
 
-    
-}
-
-.description{
-    font-style: italic;
-    text-align: center;
-}
-
-#stock1{
-    grid-area: topleft;
-}
-#stock2{
-    grid-area: topright;
-}
-#stock3{
-    grid-area: lowleft;
-}
-#stock4{
-    grid-area: lowright;
-}
 
 #home-page {
-    display: grid;
-    column-gap:110px;
-  row-gap: 20px;
-    grid-template-columns: 200px 320px 150px 150px;
-    grid-template-rows: auto;
-    grid-template-areas: 
-      "topleft topleft topright topright"
-      "topleft topleft topright topright"
-      "lowleft lowleft lowright lowright";
+  position: relative;
+  width: 320px;
+  margin: 100px auto 0 auto;
+  perspective: 1000px;
+}
+
+.carousel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; 
+  animation: rotate360 50s ;
+}
+.carousel__face { 
+  position: absolute;
+  width: 300px;
+  height: 187px;
+  top: 20px;
+  left: 10px;
+  right: 10px;
+  background-size: cover;
+  box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.5);
+  display: flex;
+}
+
+span {
+  margin: auto;
+  font-size: 2rem;
+  color: whitesmoke;
+}
+
+
+.carousel__face:nth-child(1) {
+  background-image: url("https://media.istockphoto.com/photos/cheerful-businesswoman-meets-with-client-picture-id1181008199?k=20&m=1181008199&s=612x612&w=0&h=J3jgODPesd730i6I3oUzTtzGvspyY-2ymgG2RuM9des=");
+  transform: rotateY(  0deg) translateZ(430px); }
+.carousel__face:nth-child(2) { 
+  background-image: url("https://thumbs.dreamstime.com/b/real-estate-agent-customers-shaking-hands-together-celebrati-real-estate-agent-customers-shaking-hands-together-122234801.jpg");
+    transform: rotateY( 40deg) translateZ(430px); }
+.carousel__face:nth-child(3) {
+  background-image: url("https://images.pexels.com/photos/2988232/pexels-photo-2988232.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  transform: rotateY( 80deg) translateZ(430px); }
+.carousel__face:nth-child(4) {
+  background-image: url("https://cdn.gobankingrates.com/wp-content/uploads/2021/06/iStock-1223455287-scaled-e1623871257641.jpg?w=675&quality=75");
+  transform: rotateY(120deg) translateZ(430px); }
+.carousel__face:nth-child(5) { 
+  background-image: url("https://www.cbj.ca/wp-content/uploads/2020/03/Online-banking-depositphotos.jpg");
+ transform: rotateY(160deg) translateZ(430px); }
+.carousel__face:nth-child(6) { 
+  background-image: url("https://cloudfront-us-east-2.images.arcpublishing.com/reuters/WYENZBTWYJI7DIXJIT3KV5KNQ4.jpg");
+ transform: rotateY(200deg) translateZ(430px); }
+.carousel__face:nth-child(7) { 
+  background-image: url("https://online.citi.com/JRS/banners/modules/HP_1262_CitiSelfInvest_Image.jpg");
+ transform: rotateY(240deg) translateZ(430px); }
+.carousel__face:nth-child(8) {
+  background-image: url("https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1281341046/medium_image_1281341046.jpg");
+  transform: rotateY(280deg) translateZ(430px); }
+.carousel__face:nth-child(9) {
+  background-image: url("https://images.pexels.com/photos/1175135/pexels-photo-1175135.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(320deg) translateZ(430px); }
+
+
+
+@keyframes rotate360 {
+  from {
+    transform: rotateY(0deg);
   }
+  to {
+    transform: rotateY(-360deg);
+  }
+}

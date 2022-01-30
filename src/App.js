@@ -10,6 +10,8 @@ import New from "./Pages/New.js"
 //components
 import Navbar from "./components/Navbar.js"
 
+
+
 function App() {
   return (
     <div id="app">
@@ -24,6 +26,7 @@ function App() {
             <Route path ='/Transactions/new' element ={<New />} />
           </Routes>
         </main>
+
       </Router>
     </div>
   );

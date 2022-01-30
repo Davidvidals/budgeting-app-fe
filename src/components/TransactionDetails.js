@@ -1,44 +1,77 @@
 import {useState,useEffect} from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
+import '../Css/Details.css'
 
 function TransactionDetails(){
-const [Transactions] = useState([])
-let {index} = useParams();
+const [Transactions, setTransactions] = useState([])
+let { index } = useParams();
+let navigate = useNavigate();
 
-useEffect(()=>{},[])
-    const handleDelete =()=>{};
+useEffect(()=>{
+  axios.get(`${process.env.REACT_APP_API_URL}/${index}`)
+  .then((res)=>{
+    setTransactions(res.data);
+    console.log(res.data);
+  }).catch(()=>{
+    navigate("/not-found")
+  })
+},[]);
+
+
+const handleDelete =()=>{
+  axios.delete(`${process.env.REACT_APP_API_URL}/${index}`)
+  .then((res)=>{
+    navigate('/Transactions');
+  }).catch((err)=>{
+    console.log(err)
+  })
+};
 return(
-    <div>
-        <h2> Name : {Transactions.item_name}</h2>
-        <br/>
-        <h2> Amount : {Transactions.amount}</h2>
-        <br/>
-        <h2>Date : {Transactions.date}</h2>
-        <br/>
-        <h2>From : {Transactions.from}</h2>
-        <br/>
-        <h2>Category : {Transactions.category}</h2>
+    <div >
+      <div id='detailsBody'>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>From</th>
+            <th>Category</th>
+          </tr>
+          <tr>
+            <td>{Transactions.item_name}</td>
+            <td>${Transactions.amount}</td>
+            <td>{Transactions.date}</td>
+            <td>{Transactions.from}</td>
+            <td>{Transactions.category}</td>
+          </tr>
+        </table>
+      </div>
+        
+
+
+
+
 
         <div className="showNavigation">
         <div>
           {" "}
           <Link to={`/Transactions`}>
-            <button>Back</button>
+          <p class='submit_wrapper'><input type='submit' value='Back!'/></p>
           </Link>
         </div>
         <div>
           {" "}
           <Link to={`/Transactions/${index}/edit`}>
-            <button>Edit</button>
+          <p class='submit_wrapper'><input type='submit' value='Edit!'/></p>
           </Link>
         </div>
         <div>
           {" "}
-          <button onClick={handleDelete}>Delete</button>
-        </div>
+          <p class='submit_wrapper'><input type='submit' value='Delete!' onClick={handleDelete}/></p>        </div>
       </div>
     </div>
 )
 }
 
-export default TransactionDetails
+export default TransactionDetails;

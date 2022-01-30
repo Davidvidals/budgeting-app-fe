@@ -18,9 +18,16 @@ function Transactions(){
     }, []);
      return(
             <div className="Transactions">
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
                {Transactions.map((Transactions,index)=>{
-                return <Budget  budget={Transactions} key={index}/>;   
+                return <Budget  Transaction={Transactions} key={index} index={index} />;   
                })}
+              
               
            
             </div>

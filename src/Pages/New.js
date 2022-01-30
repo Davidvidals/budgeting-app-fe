@@ -2,7 +2,12 @@ import TransactionNew from "../components/TransactionNew"
 function New() {
   return (
     <div className="New">
-      <h2>New</h2>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
       <TransactionNew />
     </div>
   );
