@@ -28,12 +28,6 @@ function Transactions(){
                 <br></br>
                 <br></br>
                 <br></br>
-               {/* {Transactions.map((el)=> el.amount).reduce((acc,curr)=>{
-                return <Number(acc) + Number (curr)/>
-               )} */}
-        {Transactions.map((el)=>el.amount).reduce((acc,curr)=>{
-            return Number(acc) + Number(curr)
-        })}
 
                 {Transactions.map((Transactions,index)=>{
                 return <Budget  Transaction={Transactions} key={index} index={index} />;   
