@@ -6,7 +6,7 @@ const API_URL = process.env.REACT_APP_API_URL;
 console.log(API_URL)
 
 function Transactions(){
-    const[Transactions,setTransactions]= useState([]);
+    const[Transactions,setTransactions]= useState({});
     useEffect(()=>{
          axios.get(`${API_URL}/Transactions`)
          .then((res)=>{
@@ -17,6 +17,10 @@ function Transactions(){
          })
     }, []);
     
+
+    let accountTotal = Transactions.map((el)=> el.amount).reduce((acc,curr)=>{
+            return Number(acc) + Number (curr)
+    })
      return(
             <div className="Transactions">
                 <br></br>
@@ -25,7 +29,7 @@ function Transactions(){
                 <br></br>
                 <br></br>
                 <br></br>
-                
+                {accountTotal.toFixed(2)}
                 {Transactions.map((Transactions,index)=>{
                 return <Budget  Transaction={Transactions} key={index} index={index} />;   
                })}
