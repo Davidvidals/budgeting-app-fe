@@ -2,14 +2,20 @@ import {Link} from "react-router-dom"
 import '../Css/Details.css'
 
 
-function Budget({ amount, index}){
+function Budget({  index,Transaction }){
     return (
         <div>
           
             <table>
                 <tr>
-                    <td><Link to ={`/Transactions/${index}`}><h2>Transaction {index}</h2> </Link></td>
+                    <th>Item Name</th>
+                    <th>Amount</th>
                 </tr>
+                <tr>
+                    <td><Link to ={`/Transactions/${index}`}><h2>{Transaction.item_name}</h2></Link></td>
+                    <td><h2>{Transaction.amount}</h2></td>
+                </tr>
+
             </table>
            
         </div>

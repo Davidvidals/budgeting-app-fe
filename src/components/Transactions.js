@@ -8,14 +8,15 @@ console.log(API_URL)
 function Transactions(){
     const[Transactions,setTransactions]= useState([]);
     useEffect(()=>{
-         axios.get(API_URL)
+         axios.get(`${API_URL}/Transactions`)
          .then((res)=>{
              setTransactions(res.data);
-             console.log(res.data)
+             console.log(res.data);
          }).catch((err)=>{
              throw err
          })
     }, []);
+    
      return(
             <div className="Transactions">
                 <br></br>
@@ -24,7 +25,8 @@ function Transactions(){
                 <br></br>
                 <br></br>
                 <br></br>
-               {Transactions.map((Transactions,index)=>{
+                
+                {Transactions.map((Transactions,index)=>{
                 return <Budget  Transaction={Transactions} key={index} index={index} />;   
                })}
               
