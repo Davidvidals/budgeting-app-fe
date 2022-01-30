@@ -6,7 +6,7 @@ const API_URL = process.env.REACT_APP_API_URL;
 console.log(API_URL)
 
 function Transactions(){
-    const[Transactions,setTransactions]= useState({});
+    const[Transactions,setTransactions]= useState([]);
     useEffect(()=>{
          axios.get(`${API_URL}/Transactions`)
          .then((res)=>{
