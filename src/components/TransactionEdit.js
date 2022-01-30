@@ -21,7 +21,7 @@ function TransactionEdit(){
     }
 
     useEffect(()=>{
-      axios.get(`${process.env.REACT_APP_API_URL}/${index}`)
+      axios.get(`${process.env.REACT_APP_API_URL}/Transactions/${index}`)
       .then((res)=>{
         setTransactions(res.data);
       }).catch((err)=>{
@@ -31,7 +31,7 @@ function TransactionEdit(){
     
     const handleSubmit = (event)=>{
         event.preventDefault();
-        axios.put(`${process.env.REACT_APP_API_URL}/${index}`, Transactions)
+        axios.put(`${process.env.REACT_APP_API_URL}/Transactions/${index}`, Transactions)
         .then((res)=>{
           navigate('/Transactions');
         }).catch((err)=>{

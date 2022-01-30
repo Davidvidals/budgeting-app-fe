@@ -9,7 +9,7 @@ let { index } = useParams();
 let navigate = useNavigate();
 
 useEffect(()=>{
-  axios.get(`${process.env.REACT_APP_API_URL}/${index}`)
+  axios.get(`${process.env.REACT_APP_API_URL}/Transactions/${index}`)
   .then((res)=>{
     setTransactions(res.data);
     console.log(res.data);
@@ -20,7 +20,7 @@ useEffect(()=>{
 
 
 const handleDelete =()=>{
-  axios.delete(`${process.env.REACT_APP_API_URL}/${index}`)
+  axios.delete(`${process.env.REACT_APP_API_URL}/Transactions/${index}`)
   .then((res)=>{
     navigate('/Transactions');
   }).catch((err)=>{

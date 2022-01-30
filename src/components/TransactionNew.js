@@ -19,7 +19,7 @@ const handleTextChange= (event=>{
 
 const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post(`${process.env.REACT_APP_API_URL}`, Transaction)
+    axios.post(`${process.env.REACT_APP_API_URL}/Transactions`, Transaction)
     .then((res)=>{
       navigate('/Transactions')
     }).catch((err)=>{
