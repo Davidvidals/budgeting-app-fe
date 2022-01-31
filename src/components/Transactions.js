@@ -17,8 +17,10 @@ function Transactions(){
          })
     }, []);
     
-
-
+let total =Transactions.map((el)=>Number(el.amount).reduce((acc,curr)=>{
+    return Number(acc) + Number(curr)
+},0))
+console.log(total)
 
      return(
             <div className="Transactions">
@@ -28,6 +30,10 @@ function Transactions(){
                 <br></br>
                 <br></br>
                 <br></br>
+
+
+
+
 
                 {Transactions.map((Transactions,index)=>{
                 return <Budget  Transaction={Transactions} key={index} index={index} />;   
