@@ -20,15 +20,14 @@ function Transactions(){
 let total = Transactions.reduce((total,current)=> total = Number(total) + Number(current.amount) , 0)
 console.log(total)
 
-function emoji (total){
-    if(total < 1000){
-    return "✅ "
-} else if (total > 1000){
-    return ' ⛔ '
-} else{
-    return total
+function amountColor(total){
+if(total <1000){
+    return 'BAD'
+}else if(total >1000){
+    return 'GOOD'
 }
 }
+
 
  
      return(
@@ -43,7 +42,7 @@ function emoji (total){
 
 
 
-                  <h2>Account Total = {total} {emoji}</h2> 
+                  <h2>Account Total = {total} {amountColor}</h2> 
                 {Transactions.map((Transactions,index)=>{
                 return <Budget  Transaction={Transactions} key={index} index={index} />;   
                })}
