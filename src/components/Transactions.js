@@ -17,7 +17,7 @@ function Transactions(){
          })
     }, []);
     
-let total = Transactions.reduce((total,current)=> total = total +current.amount)
+let total = Transactions.reduce((total,current)=> total = total +current.amount,0)
 console.log(total)
 
      return(
