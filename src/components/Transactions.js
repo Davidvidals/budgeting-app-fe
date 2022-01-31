@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Budget from './Transaction'
 import axios from "axios";
+import '../Css/Total.css'
 
 const API_URL = process.env.REACT_APP_API_URL;
 console.log(API_URL)
@@ -20,13 +21,21 @@ function Transactions(){
 let total = Transactions.reduce((total,current)=> total = Number(total) + Number(current.amount) , 0)
 console.log(total)
 
-function amountColor(){
-if(total <1000){
-    return 'BAD'
-}else if(total >1000){
-    return 'GOOD'
-}
-}
+if (total <1000) {
+   
+      <div className="negative">
+        <h1>{total}</h1>
+      </div>
+      
+    
+  } else if (total >1000) {
+    
+      <div className="positive">
+        <h1>Total</h1>
+      </div>
+      
+    
+  } 
 
 
  
@@ -42,7 +51,7 @@ if(total <1000){
 
 
 
-                  <h2>Account Total = {total} {amountColor}</h2> 
+                  <h2>Account Total = {total}</h2> 
                 {Transactions.map((Transactions,index)=>{
                 return <Budget  Transaction={Transactions} key={index} index={index} />;   
                })}
