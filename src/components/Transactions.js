@@ -20,6 +20,14 @@ function Transactions(){
 let total = Transactions.reduce((total,current)=> total = Number(total) + Number(current.amount) , 0)
 console.log(total)
 
+if(total < 1000){
+    Element.style.color= 'red'
+} else if (total > 1000){
+    Element.style.color = 'green'
+} else{
+    return total
+}
+ 
      return(
             <div className="Transactions">
                 <br></br>
