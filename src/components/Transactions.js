@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Budget from './Transaction'
 import axios from "axios";
 import '../Css/Total.css'
-import Total from '../components/Total.js'
+
 const API_URL = process.env.REACT_APP_API_URL;
 console.log(API_URL)
 
@@ -18,14 +18,14 @@ function Transactions(){
          })
     }, []);
     
-// let total = Transactions.reduce((total,current)=> total = Number(total) + Number(current.amount) , 0)
-// console.log(total)
+let total = Transactions.reduce((total,current)=> total = Number(total) + Number(current.amount) , 0)
+console.log(total)
 
-// if (total<1000){
-//     <h1 style ='color:red'>{total}</h1>
-// } else if (total>1000){
-//     <h1 style='color:green'>{total}</h1>
-// }
+if (total<1000){
+    <h1 style ='color:red'>{total}</h1>
+} else if (total>1000){
+    <h1 style='color:green'>{total}</h1>
+}
 
  
      return(
@@ -39,8 +39,8 @@ function Transactions(){
 
 
 
-                    <Total/>
-                  {/* <div className="total"><h2>Account Total = ${total.toFixed(2)}</h2> </div> */}
+                    
+                  <div className="total"><h2>Account Total = ${total.toFixed(2)}</h2> </div>
                 {Transactions.map((Transactions,index)=>{
                 return <Budget  Transaction={Transactions} key={index} index={index} />;   
                })}
