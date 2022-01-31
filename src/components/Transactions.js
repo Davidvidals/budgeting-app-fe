@@ -36,7 +36,7 @@ console.log(total)
 
 
 
-                  <div className="total"><h2>Account Total = {total.toFixed(2)}</h2> </div>
+                  <div className="total"><h2>Account Total = ${total.toFixed(2)}</h2> </div>
                 {Transactions.map((Transactions,index)=>{
                 return <Budget  Transaction={Transactions} key={index} index={index} />;   
                })}
