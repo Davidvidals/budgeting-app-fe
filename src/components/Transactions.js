@@ -32,7 +32,7 @@ console.log(total)
 
 
 
-                {total}
+                  <h2>Account Total = {total}</h2>
                 {Transactions.map((Transactions,index)=>{
                 return <Budget  Transaction={Transactions} key={index} index={index} />;   
                })}
