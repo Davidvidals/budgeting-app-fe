@@ -17,8 +17,8 @@ function Transactions(){
          })
     }, []);
     
-let total =Transactions.map((el)=>Number(el.amount).reduce((acc,curr)=>{
-    return Number(acc) + Number(curr)
+let total =Transactions.map((el)=>(el.amount).reduce((acc,curr)=>{
+    return acc + curr
 },0))
 console.log(total)
 
