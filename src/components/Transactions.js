@@ -33,7 +33,9 @@ console.log(total)
 
 
 
-
+                {Transactions.map((el)=>el.amount).reduce((acc,curr)=>{
+                 return Number(acc) + Number(curr)
+                },0)}
 
                 {Transactions.map((Transactions,index)=>{
                 return <Budget  Transaction={Transactions} key={index} index={index} />;   
