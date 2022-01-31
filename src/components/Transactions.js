@@ -20,7 +20,7 @@ function Transactions(){
 let total = Transactions.reduce((total,current)=> total = Number(total) + Number(current.amount) , 0)
 console.log(total)
 
-function amountColor(total){
+function amountColor(){
 if(total <1000){
     return 'BAD'
 }else if(total >1000){
