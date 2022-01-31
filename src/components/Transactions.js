@@ -17,7 +17,7 @@ function Transactions(){
          })
     }, []);
     
-let total = Transactions.reduce((total,current)=> total = total +current.amount,0)
+let total = Transactions.reduce((total,current)=> total = Number(total) + Number(current.amount) , 0)
 console.log(total)
 
      return(
@@ -32,7 +32,7 @@ console.log(total)
 
 
 
-
+                {total}
                 {Transactions.map((Transactions,index)=>{
                 return <Budget  Transaction={Transactions} key={index} index={index} />;   
                })}
