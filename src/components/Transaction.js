@@ -13,7 +13,7 @@ function Budget({  index,Transaction }){
                 </tr>
                 <tr>
                     <td><Link to ={`/Transactions/${index}`}><h2>{Transaction.item_name}</h2></Link></td>
-                    <td><h2>{Transaction.amount}</h2></td>
+                    <td><h2>${Transaction.amount}</h2></td>
                 </tr>
 
             </table>
