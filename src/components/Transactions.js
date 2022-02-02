@@ -21,12 +21,16 @@ function Transactions(){
 let total = Transactions.reduce((total,current)=> total = Number(total) + Number(current.amount) , 0)
 console.log(total)
 
-// if (total<1000){
+// if (total<=1000){
 //     <h1 style ='color:red'>{total}</h1>
 // } else if (total>1000){
 //     <h1 style='color:green'>{total}</h1>
 // }
 
+let textColor =''
+if (total <= 0 ) textColor = "red"
+  else if (total >= 1000) textColor = "green"
+  else textColor = ""
  
      return(
             <div className="Transactions">
@@ -40,7 +44,7 @@ console.log(total)
 
 
                     
-                  <div className="total"><h2>Account Total = <span>${total.toFixed(2)}</span></h2> </div>
+                  <div className="total"><h2>Account Total = <span style={{color: textColor }}>${total.toFixed(2)}</span></h2> </div>
                 {Transactions.map((Transactions,index)=>{
                 return <Budget  Transaction={Transactions} key={index} index={index} />;   
                })}
