@@ -30,7 +30,7 @@ console.log(total)
 let textColor =''
 if (total <= 0 ) textColor = "red"
   else if (total >= 1000) textColor = "green"
-  else textColor = ""
+  else textColor = "black"
  
      return(
             <div className="Transactions">
